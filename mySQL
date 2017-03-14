@@ -1,0 +1,18 @@
+	# Les différentes étapes à suivre
+
+	# Installer Docker à partir du root du VPS, si pas fait
+
+yum install docker
+
+	# Lancer le container mySQL 
+
+docker run --detach --name=test-mysql --env="MYSQL_ROOT_PASSWORD=mypassword" mysql
+
+	# docker run -> execute le container
+	# --detach -> ferme le container après mise en place de mysql ici
+	# --name -> nom du container
+	# --env="MYSQL_ROOT_PASSWORD=mypassword", pour intaller l'option de mdp sinon ca ne marche pas
+
+
+
+
