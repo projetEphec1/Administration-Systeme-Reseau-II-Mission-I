@@ -1,0 +1,30 @@
+options{
+    listen-on port 53 { any; };
+    listen-on-v6 port 53 { any; };
+    directory           "/var/named";
+    dump-file           "/var/named/data/cache_dump.db";
+    statistics-file "/var/cache/bind/stats.log";
+    zone-statistics yes;
+    statistics-interval 3600;
+    allow-query         { any; };
+    allow-query-cache { 127.0.0.1; };
+    allow-recursion { any; };
+
+    forwarders {
+      0.0.0.0;
+
+    };
+        directory "/var/cache/bind";
+
+        // If there is a firewall between you and nameservers you want
+        // to talk to, you may need to fix the firewall to allow multiple
+        // ports to talk.  See http://www.kb.cert.org/vuls/id/800113
+
+        // If your ISP provided one or more IP addresses for stable
+        // nameservers, you probably want to use them as forwarders.
+        // Uncomment the following block, and insert the addresses replacing
+        // the all-0's placeholder.
+
+        // forwarders {
+        //      0.0.0.0;
+        // };

@@ -1,0 +1,2 @@
+ search ns1.wt8.ephec-ti.be.
+ nameserver 79.137.39.47
