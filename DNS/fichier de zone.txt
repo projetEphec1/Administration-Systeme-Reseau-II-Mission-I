@@ -1,0 +1,19 @@
+$ORIGIN wt8.ephec-ti.be.
+$TTL 60
+
+@                   IN      SOA    ns1.wt8.ephec-ti.be. hostmaster.wt8.ephec-ti.be. (
+                         20161          ; Serial
+                         604800         ; Refresh
+                         86400          ; Retry
+                        2419200         ; Expire
+                        604800 )       ; Negative Cache TTL
+
+@                   IN                NS                   ns1.wt8.ephec-ti.be.
+
+; NAMESERVERS
+
+ns1                  IN                A                    79.137.39.47
+www                  IN                A                    79.137.39.47
+b2b                  IN                A                    79.137.39.47
+intranet             IN                A                    79.137.39.47
+
