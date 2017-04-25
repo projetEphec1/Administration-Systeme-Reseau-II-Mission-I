@@ -1,20 +1,7 @@
+
 options{
-    listen-on port 53 { any; };
-    listen-on-v6 port 53 { any; };
-    directory           "/var/named";
-    dump-file           "/var/named/data/cache_dump.db";
-    statistics-file "/var/cache/bind/stats.log";
-    zone-statistics yes;
-    statistics-interval 3600;
-    allow-query         { any; };
-    allow-query-cache { 127.0.0.1; };
-    allow-recursion { any; };
 
-    forwarders {
-      0.0.0.0;
-
-    };
-        directory "/var/cache/bind";
+        directory "/var/bind";
 
         // If there is a firewall between you and nameservers you want
         // to talk to, you may need to fix the firewall to allow multiple
@@ -28,3 +15,14 @@ options{
         // forwarders {
         //      0.0.0.0;
         // };
+
+        //========================================================================
+        // If BIND logs error messages about the root key being expired,
+        // you will need to update your keys.  See https://www.isc.org/bind-keys
+        //========================================================================
+        dnssec-validation auto;
+
+        auth-nxdomain no;    # conform to RFC1035
+        listen-on-v6 { any; };
+        listen-on {any;};
+};
