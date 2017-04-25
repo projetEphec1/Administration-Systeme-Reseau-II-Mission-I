@@ -7,7 +7,7 @@
 //include "/etc/bind/zones.rfc1918";
 
 zone "wt8.ephec-ti.be" IN {
-        type "master"
-        file "/srv/docker/bind/bind/etc/zone-wt8-ephec-ti.be"
-       allow-update { none; };
+        type master;
+        file "/etc/bind/zone-wt8-ephec-ti.be";
+       allow-query { any; };
 };
