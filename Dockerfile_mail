@@ -1,8 +1,10 @@
 # tmail docker file
 
-FROM toorop/tmail
+FROM ubuntu
 MAINTAINER Groupe 8
 
+# Installation de tmail
+apt-get install unzip
 USER tmail
 
 WORKDIR /home/tmail/dist/
@@ -13,12 +15,11 @@ RUN . conf/tmail.cfg && \
 EXPOSE 2525
 
 CMD ["/home/tmail/dist/run"]
+
+. /home/tmail/dist/conf/tmail.cfg
+
 #--------------------------------------------------------------------------------
-FROM ubuntu
 
-apt-get install unzip
-
-adduser tmail
 
 # Installation de dovecot pour IMAP et POP
 apt-get install dovecot-imapd dovecot-pop3d
