@@ -1,3 +1,4 @@
+
 $ORIGIN wt8.ephec-ti.be.
 $TTL 60
 
@@ -16,4 +17,7 @@ ns1                  IN                A                    79.137.39.47
 www                  IN                A                    79.137.39.47
 b2b                  IN                A                    79.137.39.47
 intranet             IN                A                    79.137.39.47
-
+_sip._udp            IN                SRV    2 0 5060  sip.wt8.ephec-ti.be.
+sip                  IN                A                    151.80.119.143
+@                    IN                MX        8           mail.wt8.ephec-ti.be.
+mail                 IN                A                    151.80.119.137
