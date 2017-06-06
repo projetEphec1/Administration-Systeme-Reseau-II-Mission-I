@@ -1,0 +1,50 @@
+<VirtualHost *:80>
+  ServerName intranet.wt8.ephec-ti.be
+  DocumentRoot /var/www/intranet
+
+<Directory /web/3w/intranet>
+      Options Indexes FollowSymLinks MultiViews
+      AllowOverride All
+      Order deny,allow
+      Deny from all // refusser toutes adresse sauf le 79.137.39.47
+      Allow from 79.137.39.47
+      ErrorDocument 403 "Sorry can't allow you access today" 
+  </Directory>
+
+
+  ErrorLog ${APACHE_LOG_DIR}/error.log
+  CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+</VirtualHost>
+
+<VirtualHost *:80>
+  ServerName b2b.wt8.ephec-ti.be
+  DocumentRoot /var/www/b2b
+
+  <Directory /web/3w/b2b>
+      Options Indexes FollowSymLinks MultiViews
+      AllowOverride All
+      Order deny,allow
+      Allow from all
+  </Directory>
+
+  ErrorLog ${APACHE_LOG_DIR}/error.log
+  CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+</VirtualHost>
+
+<VirtualHost *:80>
+  ServerName www.wt8.ephec-ti.be
+  DocumentRoot /var/www/www
+
+  <Directory /web/3w/www>
+      Options Indexes FollowSymLinks MultiViews
+      AllowOverride All
+      Order allow,deny
+      Allow from all
+  </Directory>
+
+  ErrorLog ${APACHE_LOG_DIR}/error.log
+  CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+</VirtualHost>
