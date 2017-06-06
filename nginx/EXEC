@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////CONSTRUCTION De l'IMAGE et du CONTENEUR//////////////////////////////////////////////////////////////////////
 
 
-docker build -t apache .                                       // le point cest le repertoire courant
+docker build -t apache .                                       // le point cest le repertoire courant ou ce trouve le dockerfile
 
 
  docker run  --name=web -d -p 80:80 apache
