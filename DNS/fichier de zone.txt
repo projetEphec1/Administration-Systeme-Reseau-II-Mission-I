@@ -1,4 +1,3 @@
-
 $ORIGIN wt8.ephec-ti.be.
 $TTL 60
 
@@ -21,3 +20,5 @@ _sip._udp            IN                SRV    2 0 5060  sip.wt8.ephec-ti.be.
 sip                  IN                A                    151.80.119.143
 @                    IN                MX        8           mail.wt8.ephec-ti.be.
 mail                 IN                A                    151.80.119.137
+owncloud             IN                A                    151.80.119.137
+
