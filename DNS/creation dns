@@ -1,0 +1,9 @@
+/////////////structure de creation et d'implementation//////////////////////////////////
+
+docker run -d --name=bind -p 53:53 --volume=/srv/docker/bind:/data sameersbn/bind:latest
+
+///////////////////Ensuite appliquer les étapes suivantes pouracceder aux fichiers de configurations///////////////////////
+
+cd /srv/docker/bind
+ cd  bind
+ cd  etc
