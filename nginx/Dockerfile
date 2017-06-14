@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:15.04
 MAINTAINER joel yepgang
 RUN apt-get update && apt-get upgrade
 RUN apt-get install -y apache2
